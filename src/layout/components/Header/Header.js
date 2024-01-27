@@ -1,23 +1,16 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faCircleXmark,
-    faEllipsisVertical,
-    faMagnifyingGlass,
-    faSignIn,
-    faSpinner,
-} from '@fortawesome/free-solid-svg-icons';
-import { useEffect, useState } from 'react';
-import HeadlessTippy from '@tippyjs/react/headless';
+import { faEllipsisVertical, faSignIn } from '@fortawesome/free-solid-svg-icons';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
-import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
 
+import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
 import images from '~/assets/images';
-import { Wrapper as PopperWrapper } from '~/components/Popper';
-import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
+import config from '~/config';
+
 import {
     CoinIcon,
     FavouriteIcon,
@@ -32,8 +25,9 @@ import {
     SettingsIcon,
     ShortcutsIcon,
     UploadIcon,
-} from '../../../Icons';
-import Image from '../../../Image';
+} from '../../../components/Icons';
+import Image from '../../../components/Image';
+import Search from '../Search';
 
 const cx = classNames.bind(styles);
 const currentUser = true;
@@ -53,6 +47,78 @@ const MENU_ITEMS = [
                     code: 'vi',
                     title: 'Vietnam',
                 },
+                {
+                    code: 'العربية',
+                    title: 'العربية',
+                },
+                {
+                    code: 'বাঙ্গালি (ভারত)',
+                    title: 'বাঙ্গালি (ভারত)',
+                },
+                {
+                    code: 'Cebuano (Pilipinas)',
+                    title: 'Cebuano (Pilipinas)',
+                },
+                {
+                    code: 'Čeština (Česká republika)',
+                    title: 'Čeština',
+                },
+                {
+                    code: 'Deutsch',
+                    title: 'Deutsch',
+                },
+                {
+                    code: 'Ελληνικά (Ελλάδα)',
+                    title: 'Ελληνικά (Ελλάδα)',
+                },
+                {
+                    code: 'Español',
+                    title: 'Español',
+                },
+                {
+                    code: 'Suomi (Suomi)',
+                    title: 'Suomi (Suomi)',
+                },
+                {
+                    code: 'Filipino (Pilipinas)',
+                    title: 'Filipino (Pilipinas)',
+                },
+                {
+                    code: 'עברית (ישראל)',
+                    title: 'עברית (ישראל)',
+                },
+                {
+                    code: 'हिंदी',
+                    title: 'हिंदी',
+                },
+                {
+                    code: 'Magyar (Magyarország)',
+                    title: 'Magyar (Magyarország)',
+                },
+                {
+                    code: 'Bahasa Indonesia',
+                    title: 'Bahasa Indonesia',
+                },
+                {
+                    code: 'Italiano (Italia)',
+                    title: 'Italiano (Italia)',
+                },
+                {
+                    code: '日本語（日本）',
+                    title: '日本語（日本）',
+                },
+                {
+                    code: 'Basa Jawa (Indonesia)',
+                    title: 'Basa Jawa (Indonesia)',
+                },
+                {
+                    code: 'ខ្មែរ (កម្ពុជា)',
+                    title: 'ខ្មែរ (កម្ពុជា)',
+                },
+                {
+                    code: '한국어 (대한민국)',
+                    title: '한국어 (대한민국)',
+                },
             ],
         },
     },
@@ -68,13 +134,6 @@ const MENU_ITEMS = [
 ];
 
 function Header() {
-    const [searchResult, setSearchResult] = useState([]);
-    useEffect(() => {
-        setTimeout(() => {
-            setSearchResult([]);
-        }, 0);
-    }, []);
-
     const userMenu = [
         {
             icon: <ProfileIcon />,
@@ -118,34 +177,14 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div className={cx('logo')}>
-                    <img src={images.logo} alt="LH Video Social" />
-                </div>
-                <HeadlessTippy
-                    interactive
-                    visible={searchResult.length > 0}
-                    render={(attrs) => (
-                        <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                            <PopperWrapper>
-                                <h4 className={cx('search-title')}>Accounts</h4>
-                                <AccountItem />
-                                <AccountItem />
-                                <AccountItem />
-                            </PopperWrapper>
-                        </div>
-                    )}
-                >
-                    <div className={cx('search')}>
-                        <input placeholder="Search accounts and videos" spellCheck={false} />
-                        <button className={cx('clear')}>
-                            <FontAwesomeIcon icon={faCircleXmark} />
-                        </button>
-                        <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
-                        <button className={cx('search-btn')}>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
-                        </button>
+                <Link to={config.routes.home}>
+                    <div className={cx('logo')}>
+                        <img src={images.logo} alt="LH Video Social" />
                     </div>
-                </HeadlessTippy>
+                </Link>
+
+                <Search />
+
                 <div className={cx('action')}>
                     {currentUser ? (
                         <>
@@ -180,7 +219,7 @@ function Header() {
                             <Image
                                 src=""
                                 className={cx('user-avatar')}
-                                fallback="https://scontent.fdad3-5.fna.fbcdn.net/v/t39.30808-1/278628793_1593088187743939_3897777643795198995_n.jpg?stp=dst-jpg_p320x320&_nc_cat=109&ccb=1-7&_nc_sid=5740b7&_nc_eui2=AeEyValYbaRr_f0qCSHyoDXyNeL9lk4Crmk14v2WTgKuaWV4N-Ks6uYawdr9fmkBL4o0wLKZs_69qpCdodlcX6w_&_nc_ohc=cfGslBlQ57oAX_c9abY&_nc_ht=scontent.fdad3-5.fna&oh=00_AfCHe5KmoISZNu8DMUiqLevG1dhqTvSbUirr78aXDyxV8w&oe=65B3C5C0"
+                                fallback="https://scontent-hkg4-1.xx.fbcdn.net/v/t39.30808-1/419126469_1040512314098930_1473214456578267748_n.jpg?stp=dst-jpg_p320x320&_nc_cat=106&ccb=1-7&_nc_sid=5740b7&_nc_eui2=AeE_dzwyoZCvTfZ6el-smv0tQ84X4l3QLbRDzhfiXdAttAIR9iNlCaJmlxo6-18GoZFF9g2Wly633UTq4B2BwLw_&_nc_ohc=9r9LgezSVNwAX9GqWkz&_nc_ht=scontent-hkg4-1.xx&oh=00_AfDcKRAvtntPQ3C3-WE1H-9Pwgm0Dc4bKKRH7WgVcF1a-g&oe=65B85171"
                                 alt="avatar"
                             />
                         ) : (
