@@ -1,0 +1,50 @@
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    border-radius: 4px;
+    color: var(--text-color);
+    transition: background-color ease-in-out 200ms;
+
+    &:last-child {
+        margin-bottom: 8px;
+    }
+
+    &.active {
+        color: var(--primary);
+
+        .menu-icon {
+            display: none;
+        }
+
+        .menu-icon__active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+        }
+    }
+
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+
+    .menu-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+    }
+
+    .menu-icon__active {
+        display: none;
+    }
+
+    .menu-title {
+        margin-left: 10px;
+    }
+}

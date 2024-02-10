@@ -26,6 +26,7 @@
     .logo {
         display: flex;
         align-items: center;
+        min-width: 300px;
 
         img {
             width: 100px;
@@ -36,6 +37,21 @@
     .action {
         display: flex;
         align-items: center;
+
+        .upload-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 110px;
+            padding: 0px 16px;
+            margin-right: 12px;
+            height: 36px;
+            border: 1px solid rgba(22, 24, 35, 0.12);
+            border-radius: 2px;
+            background: rgb(255, 255, 255);
+            font-weight: 500;
+            font-size: 1.6rem;
+        }
 
         .action-btn {
             position: relative;

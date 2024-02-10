@@ -74,7 +74,7 @@ function Search() {
                     <input
                         ref={inputRef}
                         value={searchValue}
-                        placeholder="Search accounts and videos"
+                        placeholder="Search"
                         spellCheck={false}
                         onChange={(e) => {
                             e.target.value = e.target.value.trimStart();

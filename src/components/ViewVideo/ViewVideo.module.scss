@@ -1,0 +1,80 @@
+.wrapper {
+    max-width: 692px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.header-video {
+    display: flex;
+}
+
+.avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.item-info {
+    flex: 1;
+
+    .post-info {
+        margin-left: 12px;
+
+        .nickname {
+            font-weight: 700;
+            font-size: 1.8rem;
+            line-height: 24px;
+            margin-right: 4px;
+        }
+
+        .username {
+            font-weight: 400;
+            font-size: 1.4rem;
+            line-height: 28px;
+        }
+    }
+
+    .description,
+    .music {
+        margin-left: 12px;
+    }
+
+    .description {
+        font-weight: 400;
+        fill: rgb(22, 24, 35);
+    }
+
+    .music {
+        .music-name {
+            &:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.btn-follow {
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 96px;
+    padding-inline: 15px;
+    height: 36px;
+    font-weight: 600;
+    border-radius: 2px;
+}
+
+.container {
+    flex: 1;
+    margin-left: 12px;
+}
+
+.video-items {
+    display: flex;
+    align-items: flex-start;
+    min-width: 100%;
+}

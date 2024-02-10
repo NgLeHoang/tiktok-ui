@@ -8,7 +8,7 @@
     --text-color: #161823;
     --font-family: 'IBM Plex Sans', sans-serif;
     --default-layout-header-height: 60px;
-    --default-layout-width: 1150px;
+    --default-layout-width: 100%;
     --default-layout-horizontal-spacer: 24px;
 }
 
@@ -29,7 +29,8 @@ body {
     line-height: 1.5;
     text-rendering: optimizeSpeed;
     color: var(--text-color);
-    height: 2000px;
+    min-height: 100vh;
+    height: 1200px;
 }
 
 button,

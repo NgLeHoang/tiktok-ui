@@ -1,0 +1,26 @@
+.footer {
+    margin-top: 24px;
+
+    .details {
+        margin-left: 6px;
+
+        span {
+            color: rgba(22, 24, 35, 0.5);
+            font-weight: 600;
+            font-size: 1.2rem;
+            line-height: 16px;
+            margin: 5px 6px 0 0;
+            cursor: pointer;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .details + .details {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 8px;
+    }
+}
