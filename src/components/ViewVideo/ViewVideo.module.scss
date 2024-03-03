@@ -1,7 +1,6 @@
 .wrapper {
     max-width: 692px;
     margin: 0 auto;
-    padding: 20px 0;
 }
 
 .header-video {
@@ -27,6 +26,17 @@
             font-size: 1.8rem;
             line-height: 24px;
             margin-right: 4px;
+
+            &:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+
+            .check {
+                margin-left: 4px;
+                font-size: 1.4rem;
+                color: #20d5ec;
+            }
         }
 
         .username {
@@ -48,6 +58,7 @@
 
     .music {
         .music-name {
+            margin-left: 4px;
             &:hover {
                 cursor: pointer;
                 text-decoration: underline;
@@ -57,15 +68,16 @@
 }
 
 .btn-follow {
-    margin-top: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 96px;
     min-width: 96px;
+    margin-top: 8px;
+    border-radius: 2px !important;
     padding-inline: 15px;
     height: 36px;
-    font-weight: 600;
-    border-radius: 2px;
+    font-weight: 600 !important;
 }
 
 .container {
@@ -77,4 +89,18 @@
     display: flex;
     align-items: flex-start;
     min-width: 100%;
+    padding: 10px 0;
+    border-top: 1px solid rgba(22, 24, 35, 0.2);
+}
+
+// .video-items + .video-items {
+//     border-top: 1px solid rgba(22, 24, 35, 0.2);
+// }
+
+.main-video {
+    position: relative;
+    display: flex;
+    gap: 20px;
+    height: auto;
+    margin: 18px 68px;
 }

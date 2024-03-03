@@ -11,15 +11,15 @@ function AccountItem() {
         <div className={cx('account-item')}>
             <Image
                 className={cx('avatar')}
-                src="https://scontent.fdad3-5.fna.fbcdn.net/v/t39.30808-1/419126469_1040512314098930_1473214456578267748_n.jpg?stp=dst-jpg_p320x320&_nc_cat=106&ccb=1-7&_nc_sid=5740b7&_nc_eui2=AeE_dzwyoZCvTfZ6el-smv0tQ84X4l3QLbRDzhfiXdAttAIR9iNlCaJmlxo6-18GoZFF9g2Wly633UTq4B2BwLw_&_nc_ohc=xEjPyW4WEPwAX9lJFSa&_nc_ht=scontent.fdad3-5.fna&oh=00_AfAWO09FwCn39yYnk6Itj-UdP5XYxxWQibYMwkGRtjRB7Q&oe=65C234B1"
+                src="https://scontent.fsgn5-11.fna.fbcdn.net/v/t39.30808-1/428690825_1169042500744041_2617608444660312653_n.jpg?stp=c0.107.320.320a_dst-jpg_p320x320&_nc_cat=110&ccb=1-7&_nc_sid=5740b7&_nc_eui2=AeHsCx4Y4F-bd8GMfeHt3qGBfPNg5yO4r7h882DnI7ivuDwqf2Yxi1Zu9PukGfWQ_hou3lX2mtGy4FCrSHrsci_o&_nc_ohc=U8BgBot13EYAX__PxpL&_nc_ht=scontent.fsgn5-11.fna&oh=00_AfDjdwhxXqKNAgGIDiGWm6I3WerrWEz0CmIJMnR5OwqomQ&oe=65E737EA"
                 alt=""
             />
             <div className={cx('item-info')}>
                 <p className={cx('username')}>
-                    <strong>ngthihien</strong>
+                    <strong>nglehoang</strong>
                     <FontAwesomeIcon className={cx('check')} icon={faCheckCircle} />
                 </p>
-                <p className={cx('fullname')}>Nguyễn Thị Hiền</p>
+                <p className={cx('fullname')}>Nguyễn Lê Hoàng</p>
             </div>
         </div>
     );

@@ -9,6 +9,8 @@ function ViewVideo() {
         <div className={cx('wrapper')}>
             <div className={cx('video-wrapper')}>
                 <VideoItems />
+                <VideoItems />
+                <VideoItems />
             </div>
         </div>
     );
