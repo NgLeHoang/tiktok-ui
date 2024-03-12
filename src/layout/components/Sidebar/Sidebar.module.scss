@@ -4,25 +4,15 @@
     top: 0;
     left: 0;
     height: 100%;
+    min-height: 100vh;
+    overflow-y: overlay;
     margin: 60px 0 80px 0;
 
     .sidebar-nav {
         padding: 20px 0 26px 8px;
-        overflow-y: overlay;
         height: 100%;
         width: 100%;
         position: relative;
-    }
-
-    .scrollbar-control {
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: 100%;
-        width: 6px;
-        background-color: rgba(22, 24, 35, 0.06);
-        border-radius: 4px;
-        transform: translate(0, 100%);
     }
 
     .create-effects-btn {
@@ -44,7 +34,12 @@
     }
 }
 
-.sidebar-nav::-webkit-scrollbar {
+.sidebar-nav ::-webkit-scrollbar {
     border-radius: 4px;
-    width: 6px;
+    width: 2px;
+}
+
+.sidebar-nav *::-webkit-scrollbar {
+    border-radius: 4px;
+    width: 2px;
 }

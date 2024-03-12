@@ -27,7 +27,7 @@ function Sidebar() {
             <div className={cx('sidebar-nav')}>
                 <Menu>
                     <MenuItem
-                        title="For Your"
+                        title="For You"
                         to={config.routes.home}
                         icon={<HomeIcon />}
                         activeIcon={<HomeActiveIcon />}
@@ -66,10 +66,6 @@ function Sidebar() {
                 <FollowingAccounts label="Following accounts" />
                 <Button className={cx('create-effects-btn')}>Create effects</Button>
                 <Footer />
-                <div
-                    style={{ display: 'none', height: 'calc(100% - 450px)' }}
-                    className={cx('scrollbar-control')}
-                ></div>
             </div>
         </aside>
     );
